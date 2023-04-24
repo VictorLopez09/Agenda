@@ -7,6 +7,7 @@
     } else {
         // Si no se recibió el parámetro "id" en la URL, muestra un mensaje de error
         echo "No se recibió ningún valor.";
+        header('Location:main.php');
     }
     if(!empty($_POST["btn_modificar"])){
         $materia = $_POST['materia'];
@@ -19,7 +20,7 @@
 
         $consulta = "UPDATE registro SET idmateria=?, idprofesor=?, idlugar=?, temas=?, gradogrupo=?, idcarrera=?, idusuario=? WHERE idcalendario=?;";
         $stmt = mysqli_prepare($conexion, $consulta);
-        mysqli_stmt_bind_param($stmt, "iiisssii", $materia, $profesor, $lugar, $stemas, $gradogrupo, $carrera, $usuario, $calendario);
+        mysqli_stmt_bind_param($stmt, "iiissiii", $materia, $profesor, $lugar, $stemas, $gradogrupo, $carrera, $usuario, $calendario);
         mysqli_stmt_execute($stmt);
         $numFilas = mysqli_stmt_affected_rows($stmt);
 

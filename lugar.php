@@ -24,18 +24,13 @@
 <body>
     <article>
         <div class="container">
-            <h1>Vamos por buen camino!!!</h1>
+            <h1>Carrera</h1>
             <table class="table table-sm">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Materia</th>
-                            <th>Profesor</th>
-                            <th>Lugar</th>
-                            <th>Temas</th>
-                            <th>Grado grupo</th>
-                            <th>Carrera</th>
-                            <th>Usuario</th>
+                            
                             <th>Eliminar</th>
                             <th>Modificar</th>
                         </tr>
@@ -43,19 +38,14 @@
                     <tbody>
                         <?php
                             include("comandos.php");
-                            $registros = consulta("registro");
+                            $registros = consulta("lugar");
                             foreach($registros as $registro) {
                                 echo "<tr>";
-                                echo "<td>".$registro['idcalendario']."</td>";
-                                echo "<td>".$registro['idmateria']."</td>";
-                                echo "<td>".$registro['idprofesor']."</td>";
                                 echo "<td>".$registro['idlugar']."</td>";
-                                echo "<td>".$registro['temas']."</td>";
-                                echo "<td>".$registro['gradogrupo']."</td>";
-                                echo "<td>".$registro['idcarrera']."</td>";
-                                echo "<td>".$registro['idusuario']."</td>";
-                                echo "<td><a class='btn btn-danger' href='eliminar.php?id=".$registro['idcalendario']."' onclick='confirmarEliminacion(event);'>Eliminar</a></td>";
-                                echo "<td><a class='btn btn-warning' href='modificar.php?id=".$registro['idcalendario']."' onclick='confirmacionModificar(event)'>Modificar</a></td>";
+                                echo "<td>".$registro['nom_lugar']."</td>";
+                                
+                                echo "<td><a class='btn btn-danger' href='eliminar_l.php?id=".$registro['idlugar']."' onclick='confirmarEliminacion(event);'>Eliminar</a></td>";
+                                echo "<td><a class='btn btn-warning' href='modificar_l.php?id=".$registro['idlugar']."' onclick='confirmacionModificar(event)'>Modificar</a></td>";
                                 echo "</tr>";
                             }
                         ?>
@@ -99,30 +89,10 @@
                 <div class="mb-4 mx-auto" class="form-label">
                     <form action="logout.php" method="post">
                         <input type="submit" class="btn btn-secondary" value="Cerrar sesión">
-                        <a href="agregar.php" class="btn btn-secondary">Registarse</a>
+                        <a href="agregar_l.php" class="btn btn-secondary">Agregar</a>
                     </form>
                 </div>
         </div>
     </article>
-<footer class="footer fixed-bottom bg-dark text-light mt-5">
-        <div class="container mt-5">
-            <div class="row">
-            <div class="col-md-6">
-                <h5>Información de contacto</h5>
-                <p>Dirección: Calle 123, Ciudad, País</p>
-                <p>Teléfono: +1 234 567890</p>
-                <p>Email: info@example.com</p>
-            </div>
-            <div class="col-md-6">
-                <h5>Enlaces útiles</h5>
-                <ul class="list-unstyled">
-                <li><a href="#">Política de privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Mapa del sitio</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-</footer>
 </body>
 </html>

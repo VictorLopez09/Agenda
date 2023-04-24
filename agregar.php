@@ -4,63 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Logo_de_la_UNACH.svg/2051px-Logo_de_la_UNACH.svg.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-
-    <title>Agenda</title>
+    <title>Document</title>
 </head>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-               <a class="navbar-brand" href="index.php">Agenda UNACH</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link">Registarse</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
 <body>
-    <div class="container">
-    </div>
+</div>
     <article class="mt-5">
             <div class="container mt-5">
                 <div class="row">
                     <div class="col-md-4 mx-auto">
                         <div class="card w-70">
                             <div class="card-body">
-                                <div class="mb-5">
-                                    <h2>Registarse</h2>
+                                <div class="mb-2">
+                                    <h2>Agregar</h2>
                                 </div>
                                 <form method="POST">
-                                    <div class="mb-5">
-                                        <label for="username" class="form-label">Nombre de usuario:</label>
-                                        <input  class="form-control" type="text" id="username" name="username">
+                                    <?php
+                                        include('add.php');
+                                    ?>
+                                    <div class="mb-1">
+                                        <label for="text" class="form-label">Materia:</label>
+                                        <select class="form-control" name="materia" id="materia">
+                                        <?php
+                                            include("comandos.php");
+                                            $reg1 = consulta("materia");
+                                            foreach ($reg1 as $reg1) {
+                                                echo "<option value='" .$reg1['idmateria']."'>" .$reg1['nom_materia']. "</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
-                                    <div class="mb-5">
-                                        <label for="password" class="form-label">Contraseña:</label>
-                                        <input class="form-control" type="password" id="password" name="password">
+                                    <div class="mb-1">
+                                        <label for="text" class="form-label">Profesor:</label>
+                                        <select class="form-control" name="profesor" id="profesor">
+                                        <?php
+                                            
+                                            $reg2 = consulta("profesor");
+                                            foreach ($reg2 as $reg2) {
+                                                echo "<option value='" .$reg2['idprofesor']."'>" .$reg2['nom_profesor']. "</option>";
+                                            }
+                                        ?>
+                                        </select>
                                     </div>
-                                    <div class="mb-5">
-                                        <label for="password" class="form-label">Confirmar contraseña:</label>
-                                        <input class="form-control" type="password" id="password1" name="password1">
+
+                                    <div class="mb-1">
+                                        <label for="text" class="form-label">Lugar:</label>
+                                        <select class="form-control" name="lugar" id="lugar">
+                                        <?php
+                                            
+                                            $reg3 = consulta("lugar");
+                                            foreach ($reg3 as $reg3) {
+                                                echo "<option value='" .$reg3['idlugar']."'>" .$reg3['nom_lugar']. "</option>";
+                                            }
+                                        ?>
+                                        </select>
                                     </div>
-                                    <div class="mb-4 mx-auto">
-                                        <input name="btn_registarse" type="submit" value="Registarse" class="btn btn-primary">
-                                        
+
+                                    <div class="mb-1">
+                                        <label for="text" class="form-label">Temas:</label>
+                                        <input class="form-control" type="text" id="temas" name="temas">
                                     </div>
                                     
+                                    <div class="mb-1">
+                                        <label for="text" class="form-label">Grado grupo:</label>
+                                        <input class="form-control" type="text" id="gradogrupo" name="gradogrupo">
+                                    </div>
+                                    
+                                    <div class="mb-1">
+                                        <label for="username" class="form-label">Carrera:</label>
+                                        <select class="form-control" name="carrera" id="carrera">
+                                        <?php
+                                            
+                                            $reg4 = consulta("carrera");
+                                            foreach ($reg4 as $reg4) {
+                                                echo "<option value='" .$reg4['idcarrera']."'>" .$reg4['nom_carrera']. "</option>";
+                                            }
+                                        ?>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-1">
+                                        <label for="username" class="form-label">Usuario:</label>
+                                        <select class="form-control" name="usuario" id="Usuario">
+                                        <?php
+                                            
+                                            $reg5 = consulta("usuario");
+                                            foreach ($reg5 as $reg5) {
+                                                echo "<option value='" .$reg5['idusuario']."'>" .$reg5['usuario']. "</option>";
+                                            }
+                                        ?>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4 mx-auto">
+                                        <input name="btn_modificar" type="submit" value="Modifcar" class="btn btn-primary">
+                                    </div>
                                 </form>
-                                
                             </div>
                         </div>
                     </div>
@@ -74,27 +115,5 @@
         <div class="row">
         </div>
     </div>
-    
-    
-    <footer class="bg-dark text-light mt-5">
-        <div class="container mt-5">
-            <div class="row">
-            <div class="col-md-6">
-                <h5>Información de contacto</h5>
-                <p>Dirección: Calle 123, Ciudad, País</p>
-                <p>Teléfono: +1 234 567890</p>
-                <p>Email: info@example.com</p>
-            </div>
-            <div class="col-md-6">
-                <h5>Enlaces útiles</h5>
-                <ul class="list-unstyled">
-                <li><a href="#">Política de privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-                <li><a href="#">Mapa del sitio</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>

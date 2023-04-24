@@ -33,7 +33,7 @@
                                             include("comandos.php");
                                             $reg1 = consulta("materia");
                                             foreach ($reg1 as $reg1) {
-                                                echo "<option value='" .$reg1['idmateria']."'>" .$reg1['nom-materia']. "</option>";
+                                                echo "<option value='" .$reg1['idmateria']."'>" .$reg1['nom_materia']. "</option>";
                                             }
                                             ?>
                                         </select>
@@ -45,7 +45,7 @@
                                             
                                             $reg2 = consulta("profesor");
                                             foreach ($reg2 as $reg2) {
-                                                echo "<option value='" .$reg2['idprofesor']."'>" .$reg2['nom-profesor']. "</option>";
+                                                echo "<option value='" .$reg2['idprofesor']."'>" .$reg2['nom_profesor']. "</option>";
                                             }
                                         ?>
                                         </select>
@@ -58,7 +58,7 @@
                                             
                                             $reg3 = consulta("lugar");
                                             foreach ($reg3 as $reg3) {
-                                                echo "<option value='" .$reg3['idlugar']."'>" .$reg3['nom-lugar']. "</option>";
+                                                echo "<option value='" .$reg3['idlugar']."'>" .$reg3['nom_lugar']. "</option>";
                                             }
                                         ?>
                                         </select>
@@ -81,7 +81,7 @@
                                             
                                             $reg4 = consulta("carrera");
                                             foreach ($reg4 as $reg4) {
-                                                echo "<option value='" .$reg4['idcarrera']."'>" .$reg4['nom-carrera']. "</option>";
+                                                echo "<option value='" .$reg4['idcarrera']."'>" .$reg4['nom_carrera']. "</option>";
                                             }
                                         ?>
                                         </select>
@@ -112,7 +112,6 @@
             </div>
     </article>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    
     <div class="container mt-5">
         <div class="row">
         </div>

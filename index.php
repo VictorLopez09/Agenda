@@ -70,12 +70,9 @@
     </article>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     
-    <div class="container mt-5">
-        <div class="row">
-        </div>
-    </div>
+
 </body>
-<footer class="bg-dark text-light mt-5">
+<footer class="footer fixed-bottom bg-dark text-light mt-5">
         <div class="container mt-5">
             <div class="row">
             <div class="col-md-6">
@@ -94,5 +91,5 @@
             </div>
             </div>
         </div>
-    </footer>
+</footer>
 </html>
