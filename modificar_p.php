@@ -10,7 +10,12 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
-<body>
+
+<?php
+    include('cabecera.php');
+?>
+
+<body class="d-flex flex-column min-vh-100">
 </div>
     <article class="mt-5">
             <div class="container mt-5">
@@ -19,18 +24,18 @@
                         <div class="card w-70">
                             <div class="card-body">
                                 <div class="mb-2">
-                                    <h2>Modificar carrera</h2>
+                                    <h2>Modificar datos profesor:</h2>
                                 </div>
                                 <form method="POST">
                                     <?php
                                         include("modify_p.php");
                                     ?>
-                                    <div class="mb-1">
-                                        <label for="text" class="form-label">Identificador de carrera:</label>
+                                    <div class="mb-3">
+                                        <label for="text" class="form-label">Nombre del profesor:</label>
                                         <input class="form-control" type="text" id="nombre" name="nombre">
                                     </div>
                             
-                                    <div class="mb-4 mx-auto">
+                                    <div class="mb-5 mx-auto">
                                         <input name="btn_modificar" type="submit" value="Modifcar" class="btn btn-primary">
                                         
                                     </div>
@@ -48,4 +53,9 @@
         </div>
     </div>
 </body>
+
+<?php
+    include('piedepagina.php');
+?>
+
 </html>

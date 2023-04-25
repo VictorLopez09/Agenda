@@ -21,7 +21,7 @@
 <?php
     include ("cabecera.php");
 ?>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <article>
         <div class="container">
             <h1>Carrera</h1>
@@ -44,8 +44,8 @@
                                 echo "<td>".$registro['idcarrera']."</td>";
                                 echo "<td>".$registro['nom_carrera']."</td>";
                                 
-                                echo "<td><a class='btn btn-danger' href='eliminar_l.php?id=".$registro['idcarrera']."' onclick='confirmarEliminacion(event);'>Eliminar</a></td>";
-                                echo "<td><a class='btn btn-warning' href='modificar_l.php?id=".$registro['idcarrera']."' onclick='confirmacionModificar(event)'>Modificar</a></td>";
+                                echo "<td><a class='btn btn-danger' href='eliminar_c.php?id=".$registro['idcarrera']."' onclick='confirmarEliminacion(event);'>Eliminar</a></td>";
+                                echo "<td><a class='btn btn-warning' href='modificar_c.php?id=".$registro['idcarrera']."' onclick='confirmacionModificar(event)'>Modificar</a></td>";
                                 echo "</tr>";
                             }
                         ?>
@@ -95,4 +95,7 @@
         </div>
     </article>
 </body>
+<?php
+include('piedepagina.php');
+?>
 </html>

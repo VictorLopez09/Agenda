@@ -11,17 +11,18 @@
                             <a href="main.php" class="nav-link">Registros</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="carrera.php" class="nav-link">Carrera</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="lugar.php" class="nav-link">Lugar</a>
-                        </li>
-                        <li class="nav-item active">
                             <a href="materia.php" class="nav-link">Materia</a>
                         </li>
                         <li class="nav-item active">
                             <a href="profesor.php" class="nav-link">Profesor</a>
                         </li>
+                        <li class="nav-item active">
+                            <a href="lugar.php" class="nav-link">Lugar</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="carrera.php" class="nav-link">Carrera</a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

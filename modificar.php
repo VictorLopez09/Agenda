@@ -10,16 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
-<body>
-</div>
+<body class="d-flex flex-column min-vh-100">
+    <?php
+        include('cabecera.php');
+    ?>
     <article class="mt-5">
-            <div class="container mt-5">
+            <div class="container mt-2">
                 <div class="row">
-                    <div class="col-md-4 mx-auto">
+                    <div class="col-md-5 mx-auto">
                         <div class="card w-70">
                             <div class="card-body">
                                 <div class="mb-2">
-                                    <h2>Modificar</h2>
+                                    <h2>Modificar datos del registro:</h2>
                                 </div>
                                 <form method="POST">
                                     <?php
@@ -70,7 +72,7 @@
                                     </div>
                                     
                                     <div class="mb-1">
-                                        <label for="text" class="form-label">Grado grupo:</label>
+                                        <label for="text" class="form-label">Grado y grupo:</label>
                                         <input class="form-control" type="text" id="gradogrupo" name="gradogrupo">
                                     </div>
                                     
@@ -99,7 +101,7 @@
                                         ?>
                                         </select>
                                     </div>
-                                    <div class="mb-4 mx-auto">
+                                    <div class="mb-2 mx-auto">
                                         <input name="btn_modificar" type="submit" value="Modifcar" class="btn btn-primary">
                                         
                                     </div>
@@ -111,10 +113,21 @@
 
             </div>
     </article>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
+    <main class="container mt-5">
+    
+    </main>
     <div class="container mt-5">
         <div class="row">
         </div>
     </div>
+<?php
+    include('piedepagina.php');
+?>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
+
 </html>

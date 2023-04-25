@@ -21,10 +21,10 @@
 <?php
     include ("cabecera.php");
 ?>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <article>
         <div class="container">
-            <h1>Carrera</h1>
+            <h1>Lugar:</h1>
             <table class="table table-sm">
                     <thead>
                         <tr>
@@ -95,4 +95,7 @@
         </div>
     </article>
 </body>
+<?php
+include('piedepagina.php');
+?>
 </html>
