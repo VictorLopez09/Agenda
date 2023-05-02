@@ -10,13 +10,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
-<body>
-</div>
-    <article class="mt-5">
-            <div class="container mt-5">
+
+<?php
+    include('cabecera.php');
+?>
+
+<body class="d-flex flex-column min-vh-100">
+    <article class="mt-1">
+            <div class="container mt-3">
                 <div class="row">
                     <div class="col-md-4 mx-auto">
-                        <div class="card w-70">
+                        <div class="card w-70 mt-1">
                             <div class="card-body">
                                 <div class="mb-2">
                                     <h2>Agregar</h2>
@@ -111,9 +115,8 @@
     </article>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     
-    <div class="container mt-5">
-        <div class="row">
-        </div>
-    </div>
+<?php
+    include('piedepagina.php');
+?>
 </body>
 </html>

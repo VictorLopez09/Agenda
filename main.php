@@ -97,10 +97,7 @@
                     }
                 </script>
                 <div class="mb-4 mx-auto" class="form-label">
-                    <form action="logout.php" method="post">
-                        <input type="submit" class="btn btn-secondary" value="Cerrar sesión">
-                        <a href="agregar.php" class="btn btn-secondary">Registarse</a>
-                    </form>
+                    <a href="agregar.php" class="btn btn-secondary">Registarse</a>
                 </div>
         </div>
     </article>
