@@ -34,7 +34,7 @@
                                     </div>
                             
                                     <div class="mb-4 mx-auto">
-                                        <input name="btn_modificar" type="submit" value="Modifcar" class="btn btn-primary">
+                                        <input name="btn_modificar" type="submit" value="Agregar" class="btn btn-primary">
                                         
                                     </div>
                                 </form>
