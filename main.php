@@ -104,8 +104,8 @@
                 </div>
         </div>
     </article>
+</body>
 <?php
     include('piedepagina.php');
 ?>
-</body>
 </html>

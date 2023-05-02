@@ -10,7 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
-<body>
+<?php
+ include('cabecera.php');
+?>
+<body class="d-flex flex-column min-vh-100">
 </div>
     <article class="mt-5">
             <div class="container mt-5">
@@ -48,4 +51,7 @@
         </div>
     </div>
 </body>
+<?php
+    include('piedepagina.php');
+?>
 </html>

@@ -28,8 +28,8 @@
             <table class="table table-sm">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Materia</th>
+                            <th>Id</th>
+                            <th>Nombre</th>
                             
                             <th>Eliminar</th>
                             <th>Modificar</th>
