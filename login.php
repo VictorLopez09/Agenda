@@ -21,35 +21,46 @@
                 $consulta = "SELECT * FROM usuario WHERE usuario = '".mysqli_real_escape_string($conexion, $user)."'";
                 $resultado  = mysqli_query($conexion,$consulta);
 
+
+
                 if (!$resultado) {
-                    // Mostrar un mensaje de error si la consulta falla
+                // Mostrar un mensaje de error si la consulta falla
                     echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
-                        
                 } else {
-                    $fila = mysqli_fetch_assoc($resultado);
-                    // Obtener el primer dato de la fila
-                    $contrasena_r = $fila["pass"];
-                }
-
-                if (password_verify($contra,$contrasena_r)) {
-                    # code...
-                    session_start();
-
-                    // Establecer las variables de sesión
-                    $_SESSION['username'] = $user;
-                    header("Location: main.php");
-                    exit;
-                }else{
-                    echo "<script>";
-                    echo "Swal.fire({";
-                    echo "icon: 'error',";
-                    echo "title: 'Oops...',";
-                    echo "text: '¡Verifique sus datos!',";
-                    echo "})";
-                    echo "</script>";
+                    $num_filas = mysqli_num_rows($resultado);
+                    if ($num_filas > 0) {
+                        $fila = mysqli_fetch_assoc($resultado);
+                        // Obtener el primer dato de la fila
+                        $contrasena_r = $fila["pass"];
+                        if (password_verify($contra,$contrasena_r)) {
+                            # code...
+                            session_start();
+                            // Establecer las variables de sesión
+                            $_SESSION['username'] = $user;
+                            header("Location: main.php");
+                            exit;
+                        }else{
+                            echo "<script>";
+                            echo "Swal.fire({";
+                            echo "icon: 'error',";
+                            echo "title: 'Oops...',";
+                            echo "text: '¡Verifique sus datos!',";
+                            echo "})";
+                            echo "</script>";
+                        }
+                    } else {
+                        // No se encontró ningún usuario con ese nombre
+                        echo "<script>";
+                        echo "Swal.fire({";
+                        echo "icon: 'error',";
+                        echo "title: 'Oops...',";
+                        echo "text: '¡Verifique sus datos!',";
+                        echo "})";
+                        echo "</script>";
+                        exit;
+                    }
                 }
             }
-
     }
     if(!empty($_POST["btn_registarse"])){
 

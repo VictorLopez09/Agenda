@@ -22,6 +22,9 @@
                         <li class="nav-item active">
                             <a href="carrera.php" class="nav-link">Carrera</a>
                         </li>
+                        <li>
+                            <a href="logout.php" class="nav-link">Cerra sesion</a>
+                        </li>
                         
                     </ul>
                 </div>

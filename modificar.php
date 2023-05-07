@@ -1,3 +1,11 @@
+<?php   
+        session_start();
+        // Acceder a las variables de sesión establecidas en set_session.php
+        $username = $_SESSION['username'];
+        if (!isset($_SESSION['username'])) {
+            header("Location: index.php");
+        }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,11 +31,10 @@
                                 <div class="mb-2">
                                     <h2>Modificar datos del registro:</h2>
                                 </div>
+                                <?php
+                                include("modify.php");
+                                ?>
                                 <form method="POST">
-                                    <?php
-                                        include("modify.php");
-                                    ?>
-
                                     <div class="mb-1">
                                         <label for="text" class="form-label">Materia:</label>
                                         <select class="form-control" name="materia" id="materia">
@@ -103,7 +110,6 @@
                                     </div>
                                     <div class="mb-2 mx-auto">
                                         <input name="btn_modificar" type="submit" value="Modifcar" class="btn btn-primary">
-                                        
                                     </div>
                                 </form>
                             </div>

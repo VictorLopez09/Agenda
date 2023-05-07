@@ -25,10 +25,10 @@
                                 <div class="mb-2">
                                     <h2>Agregar</h2>
                                 </div>
+                                <?php
+                                    include("add.php");
+                                ?>
                                 <form method="POST">
-                                    <?php
-                                        include('add.php');
-                                    ?>
                                     <div class="mb-1">
                                         <label for="text" class="form-label">Materia:</label>
                                         <select class="form-control" name="materia" id="materia">
@@ -78,7 +78,7 @@
                                     </div>
                                     
                                     <div class="mb-1">
-                                        <label for="username" class="form-label">Carrera:</label>
+                                        <label for="text" class="form-label">Carrera:</label>
                                         <select class="form-control" name="carrera" id="carrera">
                                         <?php
                                             

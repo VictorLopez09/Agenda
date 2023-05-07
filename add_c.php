@@ -9,6 +9,14 @@
         mysqli_stmt_bind_param($stmt, "ss", $id, $nom);
         mysqli_stmt_execute($stmt);
         $numFilas = mysqli_stmt_affected_rows($stmt);
+
+        if ($stmt) {
+            printf("Error: %s\n", mysqli_error($conexion));
+
+            
+            header('Location:carrera.php');
+            exit();
+          }
         
         header('Location:carrera.php');
     }

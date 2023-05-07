@@ -1,3 +1,11 @@
+<?php   
+        session_start();
+        // Acceder a las variables de sesión establecidas en set_session.php
+        $username = $_SESSION['username'];
+        if (!isset($_SESSION['username'])) {
+            header("Location: index.php");
+        }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

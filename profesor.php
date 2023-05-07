@@ -1,3 +1,11 @@
+<?php   
+        session_start();
+        // Acceder a las variables de sesión establecidas en set_session.php
+        $username = $_SESSION['username'];
+        if (!isset($_SESSION['username'])) {
+            header("Location: index.php");
+        }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,14 +16,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php   
-        session_start();
-        // Acceder a las variables de sesión establecidas en set_session.php
-        $username = $_SESSION['username'];
-        if (!isset($_SESSION['username'])) {
-            header("Location: index.php");
-        }
-    ?>
     <title>Document</title>
 </head>
 <?php
